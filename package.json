@@ -6,7 +6,7 @@
   "browser": "./src/index.js",
   "bin": {
     "build-i18n-src": "./scripts/build-i18n-src.js",
-    "tx-push-src": "./scripts/tx-push-src.js"
+    "tx-push-src": "./scripts/tx-push-src.js",
   },
   "scripts": {
     "build:data": "babel-node scripts/build-data",
@@ -15,7 +15,7 @@
     "lint:js": "eslint . --ext .js",
     "lint:json": "jshint -e .json www editor/blocks editor/extensions editor/interface editor/paint-editor",
     "lint": "npm run lint:js && npm run lint:json",
-    "pull:interface": "babel-node scripts/tx-pull-translations scratch-editor interface ./editor/interface/",
+    "pull:interface": "babel-node scripts/tx-pull-translations cognimates interface ./editor/interface/",
     "pull:paint": "babel-node scripts/tx-pull-translations scratch-editor paint-editor ./editor/paint-editor/",
     "pull:extensions": "babel-node scripts/tx-pull-translations scratch-editor extensions ./editor/extensions/",
     "pull:blocks": "babel-node scripts/tx-pull-blocks ./editor/blocks/",
@@ -44,6 +44,7 @@
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "babel-plugin-react-intl": "^3.0.1",
+    "dotenv": "^7.0.0",
     "transifex": "1.6.6"
   },
   "devDependencies": {

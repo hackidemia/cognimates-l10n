@@ -1,5 +1,5 @@
-import assert from 'assert';
-import parse from 'format-message-parse';
+const assert = require('assert');
+const parse = require('format-message-parse');
 
 const flattenJson = (translations) => {
     let messages = Object.keys(translations).reduce((collection, id) => {
@@ -51,4 +51,4 @@ const validateTranslations = (translation, source) => {
     );
 };
 
-export {flattenJson, validateTranslations, validMessage};
+module.exports= {flattenJson, validateTranslations, validMessage};

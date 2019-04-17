@@ -7,6 +7,7 @@
  * the person running the script has the the TX_TOKEN environment variable set to an api
  * token that has developer access.
  */
+require('dotenv').config()
 
 const args = process.argv.slice(2);
 
@@ -25,12 +26,12 @@ if (!process.env.TX_TOKEN || args.length < 3) {
     process.exit(1);
 }
 
-import fs from 'fs';
-import path from 'path';
-import transifex from 'transifex';
-import async from 'async';
-import {flattenJson, validateTranslations} from './tx-util.js';
-import locales, {localeMap} from '../src/supported-locales.js';
+const fs = require('fs');
+const path = require('path');
+const transifex = require('transifex');
+const async = require('async');
+const {flattenJson, validateTranslations} = require('./tx-util.js');
+const {locales, localeMap} = require('../src/supported-locales.js');
 
 // Globals
 const PROJECT = args[0];
@@ -50,6 +51,8 @@ const getLocaleData = (locale, callback) => {
         if (err) {
             callback(err);
         } else {
+            if (locale == 'fr')
+                console.log(JSON.parse(data));
             callback(null, {
                 locale: locale,
                 translations: JSON.parse(data)
@@ -57,6 +60,7 @@ const getLocaleData = (locale, callback) => {
         }
     });
 };
+
 
 async.mapLimit(Object.keys(locales), CONCURRENCY_LIMIT, getLocaleData, function (err, values) {
     if (err) {
