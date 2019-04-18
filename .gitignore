@@ -6,7 +6,7 @@
 npm-*
 
 # generated locale files
-/locales
+#/locales
 
 # generated build files
 /dist
