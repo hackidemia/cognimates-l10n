@@ -1,12 +1,12 @@
 {
-  "name": "scratch-l10n",
+  "name": "cognimates-l10n",
   "version": "3.1.0",
   "description": "Localization for the Scratch 3.0 components",
   "main": "./dist/l10n.js",
   "browser": "./src/index.js",
   "bin": {
     "build-i18n-src": "./scripts/build-i18n-src.js",
-    "tx-push-src": "./scripts/tx-push-src.js",
+    "tx-push-src": "./scripts/tx-push-src.js"
   },
   "scripts": {
     "build:data": "babel-node scripts/build-data",
@@ -17,7 +17,7 @@
     "lint": "npm run lint:js && npm run lint:json",
     "pull:interface": "babel-node scripts/tx-pull-translations cognimates interface ./editor/interface/",
     "pull:paint": "babel-node scripts/tx-pull-translations scratch-editor paint-editor ./editor/paint-editor/",
-    "pull:extensions": "babel-node scripts/tx-pull-translations scratch-editor extensions ./editor/extensions/",
+    "pull:extensions": "babel-node scripts/tx-pull-translations cognimates extensions ./editor/extensions/",
     "pull:blocks": "babel-node scripts/tx-pull-blocks ./editor/blocks/",
     "pull:editor": "npm run pull:blocks && npm run pull:extensions && npm run pull:paint && npm run pull:interface",
     "pull:www": "babel-node scripts/tx-pull-www ./www",
@@ -32,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LLK/scratch-l10n.git"
+    "url": "git+https://github.com/hackidemia/cognimates-l10n.git"
   },
   "author": "Massachusetts Institute of Technology",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/LLK/scratch-l10n/issues"
+    "url": "https://github.com/hackidemia/cognimates-l10n/issues"
   },
-  "homepage": "https://github.com/LLK/scratch-l10n#readme",
+  "homepage": "https://github.com/hackidemia/cognimates-l10n#readme",
   "dependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
