@@ -9,4 +9,6 @@ npm-*
 #/locales
 
 # generated build files
-/dist
+#/dist
+
+.env

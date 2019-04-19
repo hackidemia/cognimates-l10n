@@ -104,4 +104,6 @@ const isRtl = locale => {
     return rtlLocales.indexOf(locale) !== -1;
 };
 
-module.exports =  {locales, customLocales, localeMap, rtlLocales, isRtl};
+export {locales as default, customLocales, localeMap, rtlLocales, isRtl};
+
+//module.exports =  {locales, customLocales, localeMap, rtlLocales, isRtl};
