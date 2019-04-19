@@ -51,7 +51,7 @@ const getLocaleData = (locale, callback) => {
         if (err) {
             callback(err);
         } else {
-            if (locale == 'fr')
+            if (locale == 'es')
                 console.log(JSON.parse(data));
             callback(null, {
                 locale: locale,
