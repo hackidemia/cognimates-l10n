@@ -1088,7 +1088,7 @@ var isRtl = function isRtl(locale) {
   return rtlLocales.indexOf(locale) !== -1;
 };
 
-
+ //module.exports =  {locales, customLocales, localeMap, rtlLocales, isRtl};
 
 /***/ })
 
